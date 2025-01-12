@@ -2,6 +2,8 @@ import '../App.css';
 import { useEffect, useState } from 'react';
 import { getHello } from '../api/routes';
 import Header from '../components/header';
+import { Route,Router,Routes } from 'react-router-dom';
+import { RegisterAccount } from './register';
 
 const App = ()=>{
 
@@ -13,8 +15,12 @@ const App = ()=>{
   // })
   return(
     <>
+
+     <Routes>
+      <Route path='/login' element={<RegisterAccount/>}></Route>
+    </Routes>
     <section className=' flex flex-col'>
-      <Header></Header>
+      
     </section>
     </>
   )
