@@ -1,20 +1,21 @@
 import React, { useState } from "react";
 import { sendUsername } from "../api/routes";
 import { auth } from "../firebase-config";
-import { createUserWithEmailAndPassword
-  
- } from "firebase/auth";
-
+import { createUserWithEmailAndPassword} from "firebase/auth";
+import skateImage from "../pictures/skate_background.png"
+//import { url } from "inspector";
 
 export const RegisterAccount = () => {
-  const [username, setUsername] = useState("");
+
+  const [email, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
 
   const sendData = async (e) => {
     e.preventDefault(); // Prevent the form from submitting and reloading the page
-
+  
     // Send username and password to the backend
-    const data = await sendUsername({ username, password });
+    const data = await sendUsername({ email, password });
     console.log(data.message); // Log the response message from the backend
   };
 
@@ -25,11 +26,16 @@ export const RegisterAccount = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center text-white">
+    <div className="min-h-screen flex flex-col items-center justify-center text-white bg-cover bg-center" style={{
+      backgroundImage: `url(${skateImage})`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat", // Prevent tiling
+    }}>
       <h1 className="text-4xl font-bold mb-8">Register For an Account</h1>
       <form
         onSubmit={sendData} // Use onSubmit for form submission
-        className="bg-black p-8 rounded-lg shadow-lg w-full max-w-md"
+        className="bg-black p-8 rounded-lg shadow-lg w-full max-w-md bg-opacity-80"
       >
         {/* Username Field */}
         <div className="mb-4">

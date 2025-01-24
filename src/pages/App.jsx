@@ -18,8 +18,12 @@ const App = ()=>{
      <Routes>
       <Route path='/login' element={<RegisterAccount/>}></Route>
     </Routes>
-    <section className=' flex flex-col'>
-      
+    <section className=' flex flex-col pt-32'>
+      <div className='w-full bg-black mr-20'>
+        <h1 className='text-6xl text-white'>
+          Learn to Skate With us !
+        </h1>
+      </div>
     </section>
     </>
   )
