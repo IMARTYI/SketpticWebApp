@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
  const [dropDown,setDropDown] = useState(false);
+
+ 
  
   return (
-
     <header className="w-full bg-black flex flex-row justify-between h-32 border-black absolute items-center">
       <div className="ml-20 ">
         <a href="../pages/App.jsx" className="">

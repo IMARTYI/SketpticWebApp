@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import { sendUsername } from "../api/routes";
+import { auth } from "../firebase-config";
+import { createUserWithEmailAndPassword
+  
+ } from "firebase/auth";
+
 
 export const RegisterAccount = () => {
   const [username, setUsername] = useState("");
